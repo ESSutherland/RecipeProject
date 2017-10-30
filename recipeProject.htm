@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dynamic Recipe Project</title>
+    <script src="..\..\jquery-3.2.1.js"></script>
+    <script src="scripts\recipeProject.js"></script>
+    <link rel="stylesheet" href="styles\recipeProjectStyle.css"/>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            hideAll();
+
+            $('#recipeSelect').change(function () {
+                var checkRecipe = 0;
+                var checkInstructions = 0;
+                hideAll();
+                $('#btnShowChiliIngredients').show();
+
+                if ($(this).val() == 'none') {
+                    hideAll();
+                }
+
+                if ($(this).val() == 'chili') {
+                    $('#recipe1').show();
+
+                    $('#recipeChiliIngredients').hide();
+                    $('#recipeChiliInstructions').hide();
+
+                    defaultChiliValues();
+
+                    $('#btnShowChiliIngredients').click(function () {
+                        $('#recipeChiliIngredients').show();
+                        $(this).hide();
+                    });
+                    $('#btnHideChiliIngredients').click(function () {
+                        $('#recipeChiliIngredients').hide();
+                        $('#btnShowChiliIngredients').show();
+                    });
+
+                    $('#btnShowChiliInstructions').click(function () {
+                        $('#recipeChiliInstructions').show();
+                        $(this).hide();
+                    });
+                    $('#btnHideChiliInstructions').click(function () {
+                        $('#recipeChiliInstructions').hide();
+                        $('#btnShowChiliInstructions').show();
+                    });
+
+                    $('input[name=chiliIngredients]:radio').change(function () {
+                        if ($(this).val() == 'normal') {
+                            defaultChiliValues();
+                        }
+                        else if ($(this).val() == 'half') {
+                            halfChiliValues();
+                        }
+                        else if ($(this).val() == 'double') {
+                            doubleChiliValues();
+                        }
+                    });
+                }
+                if ($(this).val() == 'soup') {
+                    $('#recipe2').show();
+                    $('#btnSoupInstructions').val('v Show Instructions');
+                    $('#btnSoupIngredients').val('v Show Ingredients');
+                    $('#recipeSoupIngredients').hide();
+                    $('#recipeSoupInstructions').hide();
+
+                    defaultSoupValues();
+
+                    $('#btnShowSoupIngredients').click(function () {
+                        $('#recipeSoupIngredients').show();
+                        $(this).hide();
+                    });
+                    $('#btnHideSoupIngredients').click(function () {
+                        $('#recipeSoupIngredients').hide();
+                        $('#btnShowSoupIngredients').show();
+                    });
+
+                    $('#btnShowSoupInstructions').click(function () {
+                        $('#recipeSoupInstructions').show();
+                        $(this).hide();
+                    });
+                    $('#btnHideSoupInstructions').click(function () {
+                        $('#recipeSoupInstructions').hide();
+                        $('#btnShowSoupInstructions').show();
+                    });
+                    $('input[name=soupIngredients]:radio').change(function () {
+                        if ($(this).val() == 'normal') {
+                            defaultSoupValues();
+                        }
+                        else if ($(this).val() == 'half') {
+                            halfSoupValues();
+                        }
+                        else if ($(this).val() == 'double') {
+                            doubleSoupValues();
+                        }
+                    });
+                }
+                });
+            });
+
+            
+    </script>
+
+    <section id="seperation">
+
+        <header>
+            Dynamic Recipe Project
+        </header>
+        <section id="recipes">
+            <p>
+            Pick a recipe
+                <select id="recipeSelect">
+                    <option value="none">---</option>
+                    <option value="chili">Crockpot Chili</option>
+                    <option value="soup">Cheeseburger Soup</option>
+                </select>
+            </p>
+            <div id="mainPage">
+                <p><h3>Welcome!</h3></p>
+                <p><h4>Select an item from above to view the recipe.</h4></p>
+            </div>
+            
+            <div id="recipe1">
+                <div id="chiliDescription" class="borderClass">
+                    <p><h2>Crockpot Chili</h2></p>
+                    <p><h4>Serves: 6</h4></p>
+                    <p><h4>Preperation: 25 minutes</h4></p>
+                    <p><h4>Cooking: 6 hours</h4></p>
+                    <p><h4>Difficulty: Easy</h4></p>
+                    <p><img src="images/chili.png" width="300" height="300" /></p>
+                </div>
+                
+                <div id="radioChiliAmt" class="radioGroupClass">
+                    <p>
+                        Normal
+                        <input type="radio" name="chiliIngredients" value="normal" checked="checked"/>
+                        Half
+                        <input type="radio" name="chiliIngredients" value="half" />
+                        Double
+                        <input type="radio" name="chiliIngredients" value="double" />
+                    </p>
+                </div>
+                <div id="recipeChiliIngredients" class="borderClass">
+                    <p><h3>Ingredients</h3></p>
+                    <p><span id="oilAmtChili"></span> tbsp. cooking oil</p>
+                    <p><span id="onionAmtChili"></span> cup onion</p>
+                    <p><span id="peppersAmtChili"></span> cup chopped peppers</p>
+                    <p><span id="chiliAmtChili"></span> tbsp. Chili powder</p>
+                    <p><span id="hotChiliAmtChili"></span> tsp. Hot chili powder (optional)</p>
+                    <p><span id="meatAmtChili"></span> lb ground beef or chicken</p>
+                    <p><span id="redAmtChili"></span> cans Red Beans</p>
+                    <p><span id="kidneyAmtChili"></span> cans Kidney Beans</p>
+                    <p><span id="tomatoAmtChili"></span> cans Tomato Puree</p>
+                    <p><span id="sauceAmtChili"></span> cans Tomato Sauce</p>
+                    <p><span id="cheeseAmtChili"></span> cup shredded cheese (optional)</p>
+                    <p><span id="creamAmtChili"></span> cup sour cream (optional)</p>
+                    <p><input type="button" id="btnHideChiliIngredients" value="Hide Ingredients" class="btnClass" /></p>
+                </div>
+                <p><input type="button" id="btnShowChiliIngredients" value="Show Ingredients" class="btnClass"/></p>
+                <div id="recipeChiliInstructions" class="borderClass">
+                    <p><h3>Instructions</h3></p>
+                    <p>Heat cooking oil in <span id="panQuartChili"></span> quart skillet.</p>
+                    <p>Saute onions and peppers for 5 minutes.</p>
+                    <p>Add spices and stir for 30 seconds.</p>
+                    <p>Add meat and cook until browned. Approximately 15 minutes.</p>
+                    <p>Pour contents of skillet into <span id="crockQuartChili"></span> quart crockpot.</p>
+                    <p>Rinse beans and place in crockpot.</p>
+                    <p>Open and pour Tomato puree and sauce into crockpot.</p>
+                    <p>Cover crockpot and cook on low for <span id="cookTimeChili"></span> hours.</p>
+                    <p>Serve into individual bowls and top with sour cream and cheese.</p>
+                    <p><input type="button" id="btnHideChiliInstructions" value="Hide Instructions" class="btnClass" /></p>
+                </div>
+                <p><input type="button" id="btnShowChiliInstructions" value="Show Instructions"  class="btnClass"/></p>
+            </div>
+            
+            <div id="recipe2">
+                <div id="soupDescription" class="borderClass">
+                    <p><h2>Cheeseburger Soup</h2></p>
+                    <p><h4>Serves: 8</h4></p>
+                    <p><h4>Preperation: 45 minutes</h4></p>
+                    <p><h4>Cooking: 10 minutes</h4></p>
+                    <p><h4>Difficulty: Easy</h4></p>
+                    <p><img src="images/soup.png" width="300" height="300" /></p>
+                </div>
+                
+                <div id="radioSoupAmt" class="radioGroupClass">
+                    <p>
+                        Normal
+                        <input type="radio" name="soupIngredients" value="normal" checked="checked" />
+                        Half
+                        <input type="radio" name="soupIngredients" value="half" />
+                        Double
+                        <input type="radio" name="soupIngredients" value="double" />
+                    </p>
+                </div>
+                <div id="recipeSoupIngredients" class="borderClass">
+                    <p><h3>Ingredients</h3></p>
+                    <p><span id="beefAmtSoup"></span> pound ground beef</p>
+                    <p><span id="butterAmtSoup"></span> tablespoons butter, divided</p>
+                    <p><span id="onionAmtSoup"></span> cup chopped onion</p>
+                    <p><span id="carrotAmtSoup"></span> cup shredded carrots</p>
+                    <p><span id="celeryAmtSoup"></span> cup diced celery</p>
+                    <p><span id="basilAmtSoup"></span> tsp. dried basil</p>
+                    <p><span id="parsleyAmtSoup"></span> tsp. dried parsley flakes</p>
+                    <p><span id="potatoAmtSoup"></span> pounds cubed peeled potatoes</p>
+                    <p><span id="brothAmtSoup"></span> cups chicken broth</p>
+                    <p><span id="flourAmtSoup"></span> cup all-purpose flour</p>
+                    <p><span id="cheeseAmtSoup"></span> package Velveeta process cheese, cubed</p>
+                    <p><span id="milkAmtSoup"></span> cups whole milk</p>
+                    <p><span id="saltAmtSoup"></span> tsp. salt</p>
+                    <p><span id="pepperAmtSoup"></span> tsp. pepper</p>
+                    <p><span id="creamAmtSoup"></span> cup sour cream</p>
+                    <p><input type="button" id="btnHideSoupIngredients" value="Hide Ingredients" class="btnClass" /></p>
+                </div>
+                <p><input type="button" id="btnShowSoupIngredients" value="Show Ingredients" class="btnClass"/></p>
+
+                <div id="recipeSoupInstructions" class="borderClass">
+                    <p><h3>Instructions</h3></p>
+                    <p>In a large saucepan over medium heat, cook and crumble beef until no longer pink; drain and set aside</p>
+                    <p>In same saucepan, melt <span id="meltButterAmtSoup"></span> tablespoon butter over medium heat</p>
+                    <p>Saute onion, carrots, celery, basil and parsley until tender, about 10 minutes</p>
+                    <p>Add potatoes, beef and broth; bring to a boil</p>
+                    <p>Reduce heat; simmer, covered, until potatoes are tender, 10-12 minutes</p>
+                    <p>Meanwhile, in a small skillet, melt remaining butter. Add flour; cook and stir until bubbly, 3-5 minutes</p>
+                    <p>Add to soup; bring to a boil. Cook and stir 2 minutes</p>
+                    <p>Stir in cheese, milk, salt and pepper; cook until cheese melts</p>
+                    <p>Remove from heat; blend in sour cream</p>
+                    <p><input type="button" id="btnHideSoupInstructions" value="Hide Instructions" class="btnClass" /></p>
+                </div>
+                <p><input type="button" id="btnShowSoupInstructions" value="Show Instructions" class="btnClass"/></p>
+                
+            </div>
+
+            <div id="recipe3"></div>
+        </section>
+        <footer><p>Made by Ethan Sutherland</p></footer>
+    </section>
+    
+</body>
+</html>

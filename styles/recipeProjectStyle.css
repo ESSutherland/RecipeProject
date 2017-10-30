@@ -1,0 +1,72 @@
+﻿body {
+    background-color: #945D60;
+    font-family: Arial, sans-serif;
+    color: #3C3C3C;
+    text-align: center;
+}
+
+header {
+    height: 100px;
+    border-bottom: solid 2px #3C3C3C;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 15px;
+    background-color: #AF473C;
+}
+
+#seperation{
+    width: 50%;
+    height: 80%;
+    margin: 0 25% 0 25%;
+    background-color: azure;
+}
+
+#recipes {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.radioGroupClass {
+    border: solid 1px #3C3C3C;
+    padding-left: 20px;
+    margin-top:5px;
+}
+
+.borderClass {
+    border: solid 1px #3C3C3C;
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.btnClass {
+    height: 40px;
+    width: 200px;
+    background-color: #AF473C;
+    border: solid 1px black;
+    font-weight: bold;
+}
+
+.btnClass:hover{
+    background-color: gray;
+}
+
+.btnClass:focus {
+    outline: 0;
+}
+
+img {
+    border: solid 2px #3C3C3C;
+}
+
+footer {
+    background-color: #AF473C;
+    font-size: .8em;
+    font-weight: bold;
+
+}
+
+#mainPage {
+    border: solid 1px #3C3C3C;
+}
