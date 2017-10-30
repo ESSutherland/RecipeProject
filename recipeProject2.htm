@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dynamic Recipe Project</title>
+    <script src="..\..\jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="styles\recipeProjectStyle.css" />
+    <script>
+        function displayData(data) {
+            $("#recipeDesc").html("<p><h2>" + data.name + "</h2></p>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#recipeSelect").change(function () {
+                if ($(this).val() == "none") {
+
+                }
+                if ($(this).val() == "chili") {
+                    $.get("data/chili.json", function (data, status) {
+
+                    });
+                }
+            });          
+        });
+    </script>
+    <section id="seperation">
+        <header>
+            Dynamic Recipe Project
+        </header>
+        <section id="recipes">
+            <p>
+                Pick a recipe
+                <select id="recipeSelect">
+                    <option value="none">---</option>
+                    <option value="chili">Crockpot Chili</option>
+                    <option value="soup">Cheeseburger Soup</option>
+                </select>
+            </p>
+            <div id="mainPage">
+                <p><h3>Welcome!</h3></p>
+                <p><h4>Select an item from above to view the recipe.</h4></p>
+            </div>
+
+            <div id="recipe">
+                <div id="recipeDesc"></div>
+                <div id="radioAmt" class="radioGroupClass">
+                    <p>
+                        Normal
+                        <input type="radio" name="ingredients" value="normal" checked="checked" />
+                        Half
+                        <input type="radio" name="ingredients" value="half" />
+                        Double
+                        <input type="radio" name="ingredients" value="double" />
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
