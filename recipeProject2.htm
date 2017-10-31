@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dynamic Recipe Project</title>
+    <script src="jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="styles\recipeProjectStyle.css" />
+    <script>
+        function displayDesc(data) {
+            $("#recipe").show();
+            $("#ingredientsDiv").hide();
+            $("#instructionsDiv").hide();
+            $("#recipeDesc").html("<p><h2>" + data.name + "</h2></p>" +
+                "<p><h4>" + data.servings + "</h4></p>" +
+                "<p><h4>" + data.prep + "</h4></p>" +
+                "<p><h4>" + data.cook + "</h4></p>" +
+                "<p><h4>" + data.difficulty + "</h4></p>" +
+                "<p><img src='" + data.img + "' width='200' height='200' /></p>");
+        }
+
+        function displayIngredients(data, val) {
+            var ingredients = "";
+            if (val == 'normal') {
+                for (i = 0; i < data.defaultIngredients.length; i++) {
+                    ingredients += ("<p>" + data.defaultIngredients[i].ingredient + "</p>");
+                }
+            }
+            if (val == 'half') {
+                for (i = 0; i < data.halfIngredients.length; i++) {
+                    ingredients += ("<p>" + data.halfIngredients[i].ingredient + "</p>");
+                }
+            }
+            if (val == 'double') {
+                for (i = 0; i < data.doubleIngredients.length; i++) {
+                    ingredients += ("<p>" + data.doubleIngredients[i].ingredient + "</p>");
+                }
+            }
+            $("#ingredients").html("<p><h2>Ingredients</h2></p>" + ingredients);
+        }
+
+        function displayInstructions(data, val) {
+            var instructions = "";
+            if (val == 'normal') {
+                for (i = 0; i < data.defaultInstruction.length; i++) {
+                    instructions += ("<p>" + data.defaultInstruction[i].step + "</p>");
+                }
+            }
+            if (val == 'half') {
+                for (i = 0; i < data.halfInstruction.length; i++) {
+                    instructions += ("<p>" + data.halfInstruction[i].step + "</p>");
+                }
+            }
+            if (val == 'double') {
+                for (i = 0; i < data.doubleInstruction.length; i++) {
+                    instructions += ("<p>" + data.doubleInstruction[i].step + "</p>");
+                }
+            }
+            $("#instructions").html("<p><h2>Instructions</h2></p>" + instructions);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var inData;
+            $("#recipe").hide();
+            $("#recipeSelect").change(function () {
+                if ($(this).val() == "none") {
+                    $("#recipe").hide();
+                }
+                if ($(this).val() == "chili") {
+                    $.get("data/chili.json", function (data, status) {
+                        inData = data;
+                        displayDesc(data);
+                        displayIngredients(data, $("input[name=ingredients]:radio").val());
+                        displayInstructions(data, $("input[name=ingredients]:radio").val());
+                    });
+                }
+            });
+            $("input[name=ingredients]:radio").change(function () {
+                displayIngredients(inData, $(this).val());
+                displayInstructions(inData, $(this).val());
+            });
+            $('#showIngredients').click(function () {
+                $('#ingredientsDiv').show();
+                $(this).hide();
+            });
+            $('#hideIngredients').click(function () {
+                $('#ingredientsDiv').hide();
+                $('#showIngredients').show();
+            });
+            $('#showInstructions').click(function () {
+                $('#instructionsDiv').show();
+                $(this).hide();
+            });
+            $('#hideInstructions').click(function () {
+                $('#instructionsDiv').hide();
+                $('#showInstructions').show();
+            });
+        });
+    </script>
+    <section id="seperation">
+        <header>
+            Dynamic Recipe Project
+        </header>
+        <section id="recipes">
+            <p>
+                Pick a recipe
+                <select id="recipeSelect">
+                    <option value="none">---</option>
+                    <option value="chili">Crockpot Chili</option>
+                    <option value="soup">Cheeseburger Soup</option>
+                </select>
+            </p>
+            <div id="mainPage">
+                <p><h3>Welcome!</h3></p>
+                <p><h4>Select an item from above to view the recipe.</h4></p>
+            </div>
+
+            <div id="recipe">
+                <div id="recipeDesc" class="borderClass"></div>
+                <div id="radioAmt" class="radioGroupClass">
+                    <p>    
+                        <input type="radio" name="ingredients" value="normal" id="normal" checked="checked" />
+                        <label for="normal">Normal</label>
+                        <input type="radio" name="ingredients" value="half" id="half"/>
+                        <label for="half">Half</label>
+                        <input type="radio" name="ingredients" value="double" id="double"/>
+                        <label for="double">Double</label>
+                    </p>
+                </div>
+                <div id="ingredientsDiv" class="borderClass">
+                    <span id="ingredients"></span>
+                    <p><input type='button' id='hideIngredients' value='Hide Ingredients' class='btnClass' /></p>
+                </div>
+                <p><input type="button" id="showIngredients" value="Show Ingredients" class="btnClass" /></p>
+                <div id="instructionsDiv" class="borderClass">
+                    <span id="instructions"></span>
+                    <p><input type="button" id="hideInstructions" value="Hide Instructions" class="btnClass" /></p>
+                </div>
+                <p><input type="button" id="showInstructions" value="Show Instructions" class="btnClass" /></p>
+            </div>
+        </section>
+        <footer><p>Made by Ethan Sutherland</p></footer>
+    </section>
+</body>
+</html>

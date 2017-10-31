@@ -70,3 +70,7 @@ footer {
 #mainPage {
     border: solid 1px #3C3C3C;
 }
+
+input[type="radio"] + label {
+    border: solid 1px #3C3C3C;
+}

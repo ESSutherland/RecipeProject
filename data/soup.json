@@ -1,0 +1,83 @@
+{
+  "name": "Cheeseburger Soup",
+  "servings": "Serves: <span id='servings'></span>",
+  "prep": "Preperation: <span id='prep'></span> minutes",
+  "cook": "Cooking: <span id='cook'></span> hours",
+  "difficulty": "Difficulty: Easy",
+  "img": "images/chili.png",
+  "defaultIngredients": [
+    { "ingredient": "2 tbsp. cooking oil" },
+    { "ingredient": "1 cup onion" },
+    { "ingredient": "1 cup chopped peppers" },
+    { "ingredient": "8 tbsp. Chili powder" },
+    { "ingredient": "2 tsp. Hot chili powder (optional)" },
+    { "ingredient": "1 lb ground beef or chicken" },
+    { "ingredient": "2 cans Red Beans" },
+    { "ingredient": "2 cans Kidney Beans" },
+    { "ingredient": "2 cans Tomato Puree" },
+    { "ingredient": "2 cans Tomato Sauce" },
+    { "ingredient": "1 cup shredded cheese (optional)" },
+    { "ingredient": "1/2 cup sour cream (optional)" }
+  ],
+  "halfIngredients": [
+    { "ingredient": "1 tbsp. cooking oil" },
+    { "ingredient": "1/2 cup onion" },
+    { "ingredient": "1/2 cup chopped peppers" },
+    { "ingredient": "4 tbsp. Chili powde" },
+    { "ingredient": "1 tsp. Hot chili powder (optional)" },
+    { "ingredient": "1/2 lb ground beef or chicken" },
+    { "ingredient": "1 cans Red Beans" },
+    { "ingredient": "1 cans Kidney Beans" },
+    { "ingredient": "1 cans Tomato Puree" },
+    { "ingredient": "1 cans Tomato Sauce" },
+    { "ingredient": "1/2 cup shredded cheese (optional)" },
+    { "ingredient": "1/4 cup sour cream (optional)" }
+  ],
+  "doubleIngredients": [
+    { "ingredient": "4 tbsp. cooking oil" },
+    { "ingredient": "2 cup onion" },
+    { "ingredient": "2 cup chopped peppers" },
+    { "ingredient": "16 tbsp. Chili powde" },
+    { "ingredient": "4 tsp. Hot chili powder (optional)" },
+    { "ingredient": "2 lb ground beef or chicken" },
+    { "ingredient": "4 cans Red Beans" },
+    { "ingredient": "4 cans Kidney Beans" },
+    { "ingredient": "4 cans Tomato Puree" },
+    { "ingredient": "4 cans Tomato Sauce" },
+    { "ingredient": "2 cup shredded cheese (optional)" },
+    { "ingredient": "1 cup sour cream (optional)" }
+  ],
+  "defaultInstruction": [
+    { "step": "Heat cooking oil in 2 quart skillet." },
+    { "step": "Saute onions and peppers for 5 minutes." },
+    { "step": "Add spices and stir for 30 seconds." },
+    { "step": "Add meat and cook until browned. Approximately 15 minutes." },
+    { "step": "Pour contents of skillet into 3 quart crockpot." },
+    { "step": "Rinse beans and place in crockpot." },
+    { "step": "Open and pour Tomato puree and sauce into crockpot." },
+    { "step": "Cover crockpot and cook on low for 6 hours." },
+    { "step": "Serve into individual bowls and top with sour cream and cheese." }
+  ],
+  "halfInstruction": [
+    { "step": "Heat cooking oil in 1 quart skillet." },
+    { "step": "Saute onions and peppers for 5 minutes." },
+    { "step": "Add spices and stir for 30 seconds." },
+    { "step": "Add meat and cook until browned. Approximately 15 minutes." },
+    { "step": "Pour contents of skillet into 1-1/12 quart crockpot." },
+    { "step": "Rinse beans and place in crockpot." },
+    { "step": "Open and pour Tomato puree and sauce into crockpot." },
+    { "step": "Cover crockpot and cook on low for 3 hours." },
+    { "step": "Serve into individual bowls and top with sour cream and cheese." }
+  ],
+  "doubleInstruction": [
+    { "step": "Heat cooking oil in 4 quart skillet." },
+    { "step": "Saute onions and peppers for 5 minutes." },
+    { "step": "Add spices and stir for 30 seconds." },
+    { "step": "Add meat and cook until browned. Approximately 15 minutes." },
+    { "step": "Pour contents of skillet into 6 quart crockpot." },
+    { "step": "Rinse beans and place in crockpot." },
+    { "step": "Open and pour Tomato puree and sauce into crockpot." },
+    { "step": "Cover crockpot and cook on low for 12 hours." },
+    { "step": "Serve into individual bowls and top with sour cream and cheese." }
+  ]
+}
