@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "Crockpot Chili",
   "servings": "Serves: <span id='servings'></span>",
   "prep": "Preperation: <span id='prep'></span> minutes",
@@ -80,4 +81,55 @@
     { "step": "Cover crockpot and cook on low for 12 hours." },
     { "step": "Serve into individual bowls and top with sour cream and cheese." }
   ]
+=======
+	"name": "Crockpot Chili",
+	"servings": "Serves: <span id='servings'></span>",
+	"prep": "Preperation: <span id='prep'></span> minutes",
+	"cook": "Cooking <span id='cook'></span> hours",
+	"difficulty": "Difficulty: Easy",
+	"img": "images/chili.png",
+	"defaultIngredients": [
+		{ "ingredient": "2 tbsp. cooking oil" },
+		{ "ingredient": "1 cup onion" },
+		{ "ingredient": "1 cup chopped peppers" },
+		{ "ingredient": "8 tbsp. Chili powde" },
+		{ "ingredient": "2 tsp. Hot chili powder (optional)" },
+		{ "ingredient": "1 lb ground beef or chicken" },
+		{ "ingredient": "2 cans Red Beans" },
+		{ "ingredient": "2 cans Kidney Beans" },
+		{ "ingredient": "2 cans Tomato Puree" },
+		{ "ingredient": "2 cans Tomato Sauce" },
+		{ "ingredient": "1 cup shredded cheese (optional)" },
+		{ "ingredient": "1/2 cup sour cream (optional)" }
+	],
+	"halfIngredients": [
+		{ "ingredient": "1 tbsp. cooking oil" },
+		{ "ingredient": "1/2 cup onion" },
+		{ "ingredient": "1/2 cup chopped peppers" },
+		{ "ingredient": "4 tbsp. Chili powde" },
+		{ "ingredient": "1 tsp. Hot chili powder (optional)" },
+		{ "ingredient": "1/2 lb ground beef or chicken" },
+		{ "ingredient": "1 cans Red Beans" },
+		{ "ingredient": "1 cans Kidney Beans" },
+		{ "ingredient": "1 cans Tomato Puree" },
+		{ "ingredient": "1 cans Tomato Sauce" },
+		{ "ingredient": "1/2 cup shredded cheese (optional)" },
+		{ "ingredient": "1/4 cup sour cream (optional)" }
+	],
+	"doubleIngredients": [
+		{ "ingredient": "4 tbsp. cooking oil" },
+		{ "ingredient": "2 cup onion" },
+		{ "ingredient": "2 cup chopped peppers" },
+		{ "ingredient": "16 tbsp. Chili powde" },
+		{ "ingredient": "4 tsp. Hot chili powder (optional)" },
+		{ "ingredient": "2 lb ground beef or chicken" },
+		{ "ingredient": "4 cans Red Beans" },
+		{ "ingredient": "4 cans Kidney Beans" },
+		{ "ingredient": "4 cans Tomato Puree" },
+		{ "ingredient": "4 cans Tomato Sauce" },
+		{ "ingredient": "2 cup shredded cheese (optional)" },
+		{ "ingredient": "1 cup sour cream (optional)" }
+	]
+
+>>>>>>> 7920484c386d4f4af41cb3ae53c9868e13d1b31c
 }

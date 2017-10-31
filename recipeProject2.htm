@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Dynamic Recipe Project</title>
+<<<<<<< HEAD
     <script src="jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="styles\recipeProjectStyle.css" />
     <script>
@@ -57,12 +58,20 @@
                 }
             }
             $("#instructions").html("<p><h2>Instructions</h2></p>" + instructions);
+=======
+    <script src="..\..\jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="styles\recipeProjectStyle.css" />
+    <script>
+        function displayData(data) {
+            $("#recipeDesc").html("<p><h2>" + data.name + "</h2></p>");
+>>>>>>> 7920484c386d4f4af41cb3ae53c9868e13d1b31c
         }
     </script>
 </head>
 <body>
     <script>
         $(document).ready(function () {
+<<<<<<< HEAD
             var inData;
             $("#recipe").hide();
             $("#recipeSelect").change(function () {
@@ -98,6 +107,18 @@
                 $('#instructionsDiv').hide();
                 $('#showInstructions').show();
             });
+=======
+            $("#recipeSelect").change(function () {
+                if ($(this).val() == "none") {
+
+                }
+                if ($(this).val() == "chili") {
+                    $.get("data/chili.json", function (data, status) {
+
+                    });
+                }
+            });          
+>>>>>>> 7920484c386d4f4af41cb3ae53c9868e13d1b31c
         });
     </script>
     <section id="seperation">
@@ -119,6 +140,7 @@
             </div>
 
             <div id="recipe">
+<<<<<<< HEAD
                 <div id="recipeDesc" class="borderClass"></div>
                 <div id="radioAmt" class="radioGroupClass">
                     <p>    
@@ -143,6 +165,21 @@
             </div>
         </section>
         <footer><p>Made by Ethan Sutherland</p></footer>
+=======
+                <div id="recipeDesc"></div>
+                <div id="radioAmt" class="radioGroupClass">
+                    <p>
+                        Normal
+                        <input type="radio" name="ingredients" value="normal" checked="checked" />
+                        Half
+                        <input type="radio" name="ingredients" value="half" />
+                        Double
+                        <input type="radio" name="ingredients" value="double" />
+                    </p>
+                </div>
+            </div>
+        </section>
+>>>>>>> 7920484c386d4f4af41cb3ae53c9868e13d1b31c
     </section>
 </body>
 </html>
